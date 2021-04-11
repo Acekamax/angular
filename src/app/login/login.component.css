@@ -1,0 +1,71 @@
+/*.layout {
+    min-height: 100vh;
+    
+  }
+
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+
+nz-header {
+    background: #fff;
+    align-content: center;
+    margin: 100px 550px 0px 550px;
+    max-height: 30px;
+  }
+
+nz-content {
+    align-content: center;
+    margin: 5px 550px 120px 550px;
+    max-height: 20px;
+  }
+.inner-content {
+    padding: 1rem;
+    background: #fff;
+    min-height: 360px;
+    max-height: 100px;
+  }
+
+.inner-header {
+    padding: 1rem;
+    background: #fff;
+    min-height: 360px;
+    max-height: 100px;
+  }
+
+nz-footer {
+    text-align: center;
+  }
+.login-form {
+    max-width: 300px;
+  }
+
+.login-form-margin {
+    margin-bottom: 16px;
+  }
+
+.login-form-forgot {
+    float: right;
+  }
+
+.login-form-button {
+    width: 100%;
+  } */
+
+  .login-form {
+    max-width: 300px;
+  }
+
+  .login-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }

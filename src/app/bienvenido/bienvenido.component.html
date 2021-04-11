@@ -1,0 +1,18 @@
+<div nz-row>
+    <div nz-col nzSpan="8"></div>
+    <div nz-col nzSpan="8">
+        <nz-card nzHoverable style="width:300px" [nzCover]="coverTemplate">
+            <nz-card-meta nzTitle="Bienvenido" [nzDescription]="emailusuario" [nzAvatar]="avatarTemplate">
+            </nz-card-meta>           
+        </nz-card>
+        <ng-template #avatarTemplate>
+            <nz-avatar [nzSize]="64" nzSrc="https://i.imgur.com/nsZFIWG.jpg"></nz-avatar>
+        </ng-template>
+        <ng-template #coverTemplate>
+            <img alt="example" src="https://i.pinimg.com/originals/4d/0e/d0/4d0ed09b41b6965524ebac6a33e2141d.gif" />
+        </ng-template>
+        
+
+    </div>
+    <div nz-col nzSpan="8"></div>
+</div>

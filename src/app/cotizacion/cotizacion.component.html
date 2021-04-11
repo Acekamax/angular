@@ -1,0 +1,20 @@
+<div nz-row>
+    <div nz-col nzSpan="8"></div>
+    <div nz-col nzSpan="8">
+        <nz-card>
+            <nz-card-meta nzTitle="La compra de:" [nzDescription]="emailusuario" [nzAvatar]="avatarTemplate">
+            </nz-card-meta>
+        </nz-card>
+        <nz-card [nzActions]="[actionSetting]">
+        <p>¿Esta seguro que su compra es correcta?</p>
+        <p *ngFor="let item of this.datacarrito">{{item.nombre}}-{{item.cantidad}}</p>
+        </nz-card>
+        <ng-template #avatarTemplate>
+            <nz-avatar [nzSize]="64" nzSrc="https://i.imgur.com/nsZFIWG.jpg"></nz-avatar>
+        </ng-template>
+        <ng-template #actionSetting>
+            <button nz-button [nzSize]="size" nzType="primary" (click)="cambiarStatusCarrito()"><i nz-icon nzType="check" nzTheme="outline"></i></button>
+          </ng-template>
+    </div>
+    <div nz-col nzSpan="8"></div>
+</div>

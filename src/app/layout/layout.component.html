@@ -1,0 +1,40 @@
+<nz-layout>
+    <nz-header>
+      <div class="logo">
+       <a rel="tooltip" (click)="signOut()" routerLink="../login" data-original-title="Cerrar sesion">
+          <span class="mr-4"> Cerrar Sesion </span><i class="fa fa-user"></i>
+          </a>-->
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+        <li nz-menu-item>
+        </li>
+        <li nz-menu-item nzSelected (click)=" CambiarContenido('inicio')">Inicio</li>
+        <li nz-menu-item (click)=" CambiarContenido('carrito')">Carrito</li>
+      </ul>
+    </nz-header>
+    <nz-layout>
+      <nz-sider nzWidth="200px" nzTheme="light">
+                 <!-- div aqui for each de pSssssss-->
+          <div>
+            <nz-card nzTitle="Cantidad Productos" [nzActions]="[actionSetting]">
+              <p *ngFor="let item of this.items">{{item.nombre}}-{{item.cantidad}}</p>
+            </nz-card>
+            <ng-template #actionSetting>
+              <button nz-button [nzSize]="size" nzType="primary"(click)="guardarCarro()"><i nz-icon nzType="save" nzTheme="outline" > </i></button>
+            </ng-template> 
+          </div>     
+      </nz-sider>
+      <nz-layout class="inner-layout" style="margin-top: 1%;">
+        <nz-content>
+            <app-carrito (postMessageEvent)=traerproductosSeleccionados($event) *ngIf="this.modulo=='carrito'"></app-carrito>
+            <p *ngIf="this.modulo=='inicio'">
+              <app-bienvenido [emailusuario]=this.userEmail></app-bienvenido>
+            </p>
+            <p *ngIf="this.modulo=='cotizacion'">
+              <app-cotizacion [datacarrito]=this.items [newcarCC]=this.newcar [emailusuario]=this.userEmail>
+              </app-cotizacion>  
+            </p>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>
