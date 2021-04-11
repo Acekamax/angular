@@ -1,10 +1,8 @@
 <div nz-row style="margin-left: 10%; margin-right: 10%;">
     <div nz-col nzSpan="4" *ngFor="let item of this.prueba" style="margin: 4%;">
-        <nz-card nzTitle="{{item.Nombre|titlecase}}" [nzActions]="[actionSetting,actionEdit,actionEllipsis]">
-            <p>
-                {{item.Descripcion}}
-            </p>
-            <!---- <img nz-image width="150px" height="150px"  nzSrc="https://i.imgur.com/98bTqYD.jpg" alt=""/>-->
+        <nz-card [nzCover]="coverTemplate" [nzActions]="[actionSetting,actionEdit,actionEllipsis]">
+          <nz-card-meta nzTitle="{{item.Nombre|titlecase}}" [nzDescription]="item.Descripcion">
+          </nz-card-meta>               
         </nz-card>
         <ng-template #actionSetting>
             <i nz-icon nzType="check" nzTheme="outline" (click)="agregarProducto(item.Sku,item.Nombre,1)"></i>
@@ -14,6 +12,9 @@
           </ng-template>
           <ng-template #actionEllipsis>
             <i nz-icon nzType="delete" nzTheme="outline" (click)="eliminarProducto(item.Sku,item.Nombre,1)"></i>
+          </ng-template>
+          <ng-template #coverTemplate>
+            <img alt="example" src="/assets/{{item.Sku}}.png" />
           </ng-template>
     </div>
 </div>
